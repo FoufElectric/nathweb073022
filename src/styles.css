@@ -1,0 +1,647 @@
+/* Removes padding and margin entirely from all, so it's flush to the top left to start */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fcf7fd;
+}
+/* this is strictly to avoid the scrolling on the X axis on mobile... */
+.body-wrapper {
+  overflow-x: hidden;
+  position: relative;
+}
+/* flex so it flows around, not on different lines.  */
+/* align-items center, centers salon allure vertically */
+nav {
+  /* This WILL make it fixed up top
+  position: fixed;
+  width: 100%; */
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #29232b;
+  min-height: 18vh;
+  font-family: "Poppins", sans-serif;
+}
+
+footer {
+  bottom: 0px;
+  margin-top: 40px;
+  /* display: flex;
+  justify-content: space-around; */
+  align-items: center;
+  background-color: #29232b;
+  min-height: 18vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.nav-scrolling {
+  position: fixed;
+  width: 100%;
+  min-height: 10vh;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  /* outline: #4caf50 solid 2px; */
+  width: 40vw;
+  height: 17vh;
+  color: rgb(226, 226, 226);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 20px;
+  background-image: url(src/assets/nath-logo2.png);
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+/* The margin-left right, need to be MINUS HALF of asset's width, height ;) */
+.contact-image-butterfly {
+  position: fixed;
+  top: 65%;
+  left: 50%;
+  width: 485px;
+  height: 460px;
+  margin-left: -243px;
+  margin-top: -130px;
+  z-index: -2;
+  display: inline-block;
+}
+
+.white-line {
+  height: 23px;
+  width: 100%;
+  background-image: url("src/assets/purple-marble.jpg");
+}
+
+.white-line2 {
+  height: 23px;
+  width: 100%;
+  background-image: url("src/assets/purple-marble.jpg");
+  background-position: center;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgb(226, 226, 226);
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.nav-links li:hover {
+  /* color: #fff;
+  background-color: black;
+  border: 2px rgb(226, 226, 226) solid;
+  padding: 7px;
+  transition: none; */
+
+  border-left: 3px solid rgb(226, 226, 226);
+  border-right: 3px solid rgb(226, 226, 226);
+  padding: 0 8px 0 8px;
+  margin: 0 6px 0 6px;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 24px;
+  height: 3px;
+  background-color: rgb(226, 226, 226);
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+/* This is just so that nav-items dont look squished at med widths */
+@media screen and (max-width: 1100px) {
+  .nav-links {
+    width: 48%;
+  }
+}
+
+@media screen and (min-width: 1260px) {
+  .logo {
+    width: 32vw;
+    /* experimental */
+    height: 13.599vh;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .logo {
+    width: 28vw;
+    /* experimental */
+    height: 11.899vh;
+  }
+}
+
+@media screen and (min-width: 1630px) {
+  .logo {
+    width: 25vw;
+    /* experimental */
+    height: 10.624vh;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+  .logo {
+    width: 22vw;
+    /* experimental */
+    height: 9.349vh;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .logo {
+    width: 50vw;
+    /* experimental */
+    height: 21.25vh;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .logo {
+    width: 55vw;
+    /* experimental */
+    height: 23.37vh;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .logo {
+    width: 60vw;
+    /* experimental */
+    height: 25.5vh;
+  }
+}
+
+@media screen and (max-height: 400px) {
+  .logo {
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .white-line {
+    height: 20px;
+  }
+
+  .white-line2 {
+    height: 20px;
+  }
+}
+
+.customers {
+  font-family: "Poppins", sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+  /* background-color: #fcf7fd; */
+}
+
+.footer-wrapper {
+  background-color: #29232b;
+  font-family: "Poppins", sans-serif;
+  border-collapse: collapse;
+  /* you may want a smaller percentage width */
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-wrapper-div {
+  display: flex;
+  justify-content: space-around;
+  background-color: #29232b;
+  font-family: "Poppins", sans-serif;
+  border-collapse: collapse;
+  /* you may want a smaller percentage width */
+  width: 65%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media screen and (min-width: 1000px) {
+  .footer-wrapper-div {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .footer-wrapper-div {
+    width: 80%;
+  }
+}
+
+.footer-wrapper-div h1 {
+  letter-spacing: 2px;
+  padding-top: 14px;
+  font-size: 14px;
+  color: rgb(226, 226, 226);
+  font-weight: bold;
+}
+
+.footer-wrapper-div p {
+  font-size: 12px;
+  color: rgb(189, 189, 189);
+}
+
+.footer-wrapper-div .visit-us {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer-wrapper-div .hours {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 10px 0 10px;
+}
+
+.footer-wrapper-div .follow-us {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer-wrapper-div .visit-us .map-link-div {
+  font-size: 12px;
+  color: rgb(255, 253, 253);
+}
+
+.footer-wrapper th {
+  letter-spacing: 2px;
+  padding-top: 14px;
+  font-size: 14px;
+  color: rgb(226, 226, 226);
+}
+
+.footer-wrapper td {
+  font-size: 12px;
+  color: rgb(189, 189, 189);
+}
+
+.footer-wrapper .map-link a {
+  font-size: 12px;
+  color: rgb(255, 253, 253);
+}
+
+.little-space-under-footer {
+  height: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .footer-wrapper {
+    /* what to do when screen tightens? */
+    width: 100%;
+    padding: 0;
+  }
+}
+
+.paragraph-styles {
+  font-family: "Poppins", sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin: 0 auto;
+  background-color: #fcf7fd;
+  font-size: 19px;
+}
+
+.paragraph-styles-visit {
+  font-family: "Poppins", sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin: 0 auto;
+
+  font-size: 19px;
+
+  text-align: center;
+}
+
+.paragraph-styles h4 {
+  font-weight: 500;
+  font-size: 27px;
+}
+
+.paragraph-styles-visit h4 {
+  font-weight: 100;
+  font-size: 27px;
+}
+
+.paragraph-styles p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.paragraph-styles-visit p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.contact-image {
+  border: solid black;
+  border-width: 4px;
+  border-radius: 15px;
+  display: block;
+  width: 60%;
+  margin: 10px auto 30px auto;
+}
+
+.customers .main-category-title {
+  padding-top: 14px;
+  padding-bottom: 14px;
+  /* background-color: #fcf7fd; */
+  pointer-events: none;
+  font-family: "Dancing Script", cursive;
+  color: #29232b;
+  letter-spacing: 0px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 77px;
+}
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+/*----------------------------------------------------*/
+@media screen and (min-width: 1700px) {
+  .contact-image {
+    width: 45%;
+  }
+
+  .paragraph-styles {
+    width: 45%;
+    font-size: 24px;
+  }
+
+  .paragraph-styles h4 {
+    font-size: 32px;
+  }
+
+  .paragraph-styles-visit {
+    width: 45%;
+    font-size: 24px;
+  }
+
+  .paragraph-styles-visit h4 {
+    font-size: 32px;
+  }
+}
+
+/* Play around with the max-width */
+@media screen and (max-width: 1040px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .contact-image {
+    width: 85%;
+  }
+
+  .contact-image-butterfly {
+    width: 325px;
+    height: 308px;
+    margin-left: -163px;
+    margin-top: -54px;
+  }
+
+  .paragraph-styles {
+    width: 85%;
+    font-size: 16px;
+  }
+
+  .paragraph-styles h4 {
+    font-size: 24px;
+  }
+
+  .paragraph-styles-visit {
+    width: 85%;
+    font-size: 16px;
+  }
+
+  .paragraph-styles-visit h4 {
+    font-size: 24px;
+  }
+
+  .white-line {
+    background-size: 800px 200px;
+  }
+
+  .white-line2 {
+    background-size: 800px 200px;
+    background-position: center;
+  }
+
+  .customers .main-category-title {
+    font-size: 68px;
+  }
+
+  /* .price-table {
+    position: absolute;
+    width: 100%;
+    height: 12vh;
+    top: 18vh;
+    justify-content: space-around;
+    background-color: #5d4954;
+    display: flex;
+    flex-direction: row; 
+    align-items: center;
+    
+    display: inline;
+    z-index: 0;
+  }  */
+
+  .nav-links {
+    position: absolute;
+    right: 0px;
+    height: 52vh;
+    top: 18vh;
+    width: 50%;
+    background-color: #29232b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* this moves it off the screen */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    z-index: 2;
+  }
+
+  .nav-links-scrolling {
+    top: 10vh;
+  }
+  /* This is cause we want the menu items to fade in! */
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
+  .customers {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .footer-wrapper-div {
+    display: block;
+  }
+
+  .contact-image-butterfly {
+    width: 243px;
+    height: 230px;
+    margin-left: -121px;
+    margin-top: -25px;
+  }
+
+  .footer-wrapper-div .visit-us {
+    display: block;
+  }
+
+  .footer-wrapper-div .hours {
+    display: block;
+  }
+
+  .footer-wrapper-div .follow-us {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1250px) {
+  .customers {
+    width: 70%;
+  }
+}
+
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+/* ----------------------------------------------------------------------- */
+.needs-to-be-wide {
+  width: 30%;
+}
+
+.customers td {
+  /* border: 1px solid #ddd; */
+  padding: 8px;
+}
+
+.customers tr:nth-child(even) {
+  background-color: #f2e4f8;
+}
+
+.secondary-header {
+  background-image: linear-gradient(to right, #b596c2, #fcf7fd);
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.customers tr:hover {
+  background-color: #cccacc;
+}
+
+/* .customers .main-category-title:hover {
+  background-color: transparent;
+} */
+
+.customers th {
+  /* padding-top: 12px;
+  padding-bottom: 12px; */
+  padding: 5px;
+  text-align: left;
+  font-size: 18px;
+}
+
+.category-title {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #442163;
+
+  color: rgb(226, 226, 226);
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.needs-to-be-white {
+  background-color: #fcf7fd;
+}
+
+.special-gradient {
+  background-image: linear-gradient(to right, #442163, #fcf7fd);
+}
+
+.main-special-gradient {
+  /* background-image: linear-gradient(to right, #29232b, #fcf7fd); */
+}
+
+/* .pusher {
+  display: flex;
+  min-height: 60vh;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+
+/* Social media Icons */
+
+.fa {
+  padding-top: 3px;
+  font-size: 21px;
+  width: 25px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 60px;
+}
+
+.fa:hover {
+  opacity: 0.7;
+  text-decoration: none;
+  color: #29232b;
+}
+
+.fa-facebook {
+  background: rgb(189, 189, 189);
+  color: #29232b;
+}
+
+.fa-instagram {
+  background: rgb(189, 189, 189);
+  color: #29232b;
+}
